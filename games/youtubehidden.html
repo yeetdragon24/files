@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>&zwnj;</title>
+    <style>
+      #base{
+        margin: -2px;
+      }
+      #below{
+        position:fixed;
+        top:0;
+        margin:0px;
+        height:600px;
+      }
+    </style>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <body onkeypress="loadframe(10, 10)">
+    <div id="base" onkeypress="myfunction">
+      <!--  Just here as template, replaced with JS during runtime
+      
+      <iframe src="https://nitrotype.com" width=1365 height=610></iframe>
+      -->
+      
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="below" onkeypress="myfunction()">
+
+    </div>
+    
+    <script>
+    //The hidden site stuff
+    var code = prompt("Please enter the site that you want to have hidden", "https://yeetdragon23.github.io/n-gon/index.html")
+    const para = document.createElement("div");
+    
+    function loadframe(width, height) {
+      para.innerHTML =  "<iframe src='" + code + "' width=" + width + " height=" + height + " onclick='' id='belowframe'>";
+    }
+    
+    
+    document.getElementById("below").appendChild(para);
+    
+    //Just something to make the Iframes less sus by making them have screen height and screen width
+    document.getElementById("base").innerHTML = '<iframe src="https://mcpsmd.instructure.com" width=' + window.innerWidth + ' height=' + window.innerHeight + ' id="baseiframe">ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ Hey, this is YeetDragon23! This code was mostly from https://developer.mozilla.org and https://www.w3shools.com.ㅤ ㅤㅤㅤ ㅤㅤ ㅤㅤㅤ </iframe>'
+    
+    function myfunction() {
+      window.scrollTo(0, 0);
+    }
+    
+    
+    
+    document.addEventListener("keydown", loadframe(10, 10));
+    
+    
+    
+    
+    setInterval(function () {loadframe(window.innerWidth/2, window.innerHeight);}, 10);
+    </script>
+  </body>
+</html>
