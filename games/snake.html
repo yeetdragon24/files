@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Canvas tutorial</title>
+    <script>
+      function draw() {
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+          for (var y = 0; y < 12; y++) {
+            for (var x = 0; x < 14; x++) {
+              if (y/2 === Math.round(y/2)) {
+                ctx.fillStyle = 'rgb(0, 200, 50)';
+                ctx.fillRect((x*50)+(x*50), y*50, 50, 50);
+                ctx.fillStyle = 'rgb(0, 150, 50)';
+                ctx.fillRect((x*50)+(x*50)+50, y*50, 50, 50);
+              } else {
+                ctx.fillStyle = 'rgb(0, 200, 50)';
+                ctx.fillRect((x*50)+(x*50)+50, y*50, 50, 50);
+                ctx.fillStyle = 'rgb(0, 150, 50)';
+                ctx.fillRect((x*50)+(x*50), y*50, 50, 50);
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      canvas { border: 1px solid black; }
+    </style>
+  </head>
+  <body onload="draw();">
+    <canvas id="tutorial" width="1350" height="595"></canvas>
+    
+  </body>
+</html>
